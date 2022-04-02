@@ -26,6 +26,7 @@ Route::get('/dashboard', function () {
 //Admin Panel Route start
 Route::get('admin',[AdminController::class, 'index']);
 
+Route::get('/s',[UserController::class,'index']);
 
 
 // user Route start
