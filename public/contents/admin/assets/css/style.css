@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+}
+a,a:hover{
+    text-decoration: none;
+    color: black;
+}
+ul,li{
+    list-style-type: none;
+
+}
+
+/* common css end */
+.card_header_title{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+}
+.header_btn{
+    text-align: right;
+}
+.card_body p{
+    font-style: italic;
+    color:black;
+    font-size: 18px;
+}
+.req_star{
+    color: red;
+    font-weight: bold;
+}
+.form_control{
+    width: 100%;
+}
+.form-group{
+    margin:20px 0px;
+}
+.card_header_title i{
+    font-size:16px;
+    margin-right: 5px;;
+}

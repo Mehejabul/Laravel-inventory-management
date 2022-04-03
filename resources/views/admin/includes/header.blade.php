@@ -19,5 +19,6 @@
         <link href="{{asset('contents/admin')}}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('contents/admin')}}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
+        <!-- style Css-->
+        <link href="{{asset('contents/admin')}}/assets/css/style.css" id="app-style" rel="stylesheet" type="text/css" />
     </head>

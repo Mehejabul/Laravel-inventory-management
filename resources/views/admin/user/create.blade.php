@@ -1,74 +1,73 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row">
-    <div class="col-12">
-        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
-        </div>
+    <div class="col-lg-12">
+        <form>
+            <div class="card">
+                <div class="card-header card_header bg-black">
+                    <div class="row">
+                        <div class="col-lg-8 card_header_title">
+                            User Create
+                        </div>
+                            <div class="col-lg-4 header_btn">
+                                <a class="btn btn-md btn-secondary" href="{{url('dashboard/user')}}"> All user</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body card_body">
+                    <p>The field labels marked with <span class="req_star"> * </span>are required input fields.</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label><strong>UserName<span class="req_star"> * </span></strong> </label>
+                                <input type="text" class="form-control form_control" id="" name="name" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label><strong>Password<span class="req_star"> * </span></strong> </label>
+                                <input type="password" class="form-control form_control" id="" name="password" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label><strong>Phone<span class="req_star"> * </span></strong> </label>
+                                <input type="phone" class="form-control form_control" id="" name="phone" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label><strong>Photo</strong> </label>
+                                <input type="file" class="form-control form_control" id="" name="pic" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <input class="mt-2" type="checkbox" name="is_active" value="1" checked="">
+                                <label class="mt-2"><strong>Active</strong></label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label><strong>Email<span class="req_star"> * </span></strong> </label>
+                                <input type="email" class="form-control form_control" id="" name="email" value="">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>Confirm Password<span class="req_star"> * </span></strong> </label>
+                                <input type="password" class="form-control form_control" id="" name="password_confirmation" value="">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>Role<span class="req_star"> * </span></strong> </label>
+                                <select class="form-control form_control" id="" name="role" value="">
+                                    <option value="">Select Role</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-dark text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
-</div>
-<div class="row">
-    <div class="col-xl-12">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-muted fw-medium">Orders</p>
-                                <h4 class="mb-0">1,235</h4>
-                            </div>
-                            <div class="flex-shrink-0 align-self-center">
-                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
-                                    <span class="avatar-title">
-                                        <i class="bx bx-copy-alt font-size-24"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-muted fw-medium">Revenue</p>
-                                <h4 class="mb-0">$35, 723</h4>
-                            </div>
-                            <div class="flex-shrink-0 align-self-center ">
-                                <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                                    <span class="avatar-title rounded-circle bg-primary">
-                                        <i class="bx bx-archive-in font-size-24"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-muted fw-medium">Average Price</p>
-                                <h4 class="mb-0">$16.2</h4>
-                            </div>
-                            <div class="flex-shrink-0 align-self-center">
-                                <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                                    <span class="avatar-title rounded-circle bg-primary">
-                                        <i class="bx bx-purchase-tag-alt font-size-24"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 @endsection
