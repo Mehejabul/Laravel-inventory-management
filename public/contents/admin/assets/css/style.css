@@ -41,3 +41,7 @@ ul,li{
     font-size:16px;
     margin-right: 5px;;
 }
+.custom_table td{
+    font-weight: 800;
+    color: Black;
+}

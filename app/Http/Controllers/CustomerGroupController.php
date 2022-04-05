@@ -1,27 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Http\Models\CustomerGroup;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Intervention\Image\ImageManagerStatic as Image;
 
-class UserController extends Controller
-{
-    public function __construct(){
-        $this->middleware('auth');
-    }
+class CustomerGroupController extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
-        $alluser = User::where('status',1)->get();
-        return view('admin.user.all',compact('alluser'));
+    return view('admin.customer-group.all');
     }
 
     /**
@@ -30,7 +24,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('admin.user.create');
+    return view('admin.customer-group.create');
     }
 
     /**
@@ -88,4 +82,5 @@ class UserController extends Controller
     {
         //
     }
+
 }

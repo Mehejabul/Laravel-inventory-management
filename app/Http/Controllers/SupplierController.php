@@ -1,27 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Intervention\Image\ImageManagerStatic as Image;
 
-class UserController extends Controller
+use Illuminate\Http\Request;
+
+class SupplierController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $alluser = User::where('status',1)->get();
-        return view('admin.user.all',compact('alluser'));
+    public function index()
+    {
+        //
     }
 
     /**
@@ -29,8 +21,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-        return view('admin.user.create');
+    public function create()
+    {
+        //
     }
 
     /**

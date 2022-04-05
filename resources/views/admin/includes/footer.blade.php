@@ -33,6 +33,7 @@
 
         <!-- App js -->
         <script src="{{asset('contents/admin')}}/assets/js/app.js"></script>
-
+            <!-- custom js -->
+            <script src="{{asset('contents/admin')}}/assets/js/custom.js"></script>
     </body>
 </html>

@@ -136,8 +136,8 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{url('/user')}}" key="t-blog-list">User LIst</a></li>
                         <li><a href="{{url('/user/create')}}" key="t-blog-grid">Add User</a></li>
-                        <li><a href="#" key="t-blog-details">Customer list</a></li>
-                        <li><a href="#" key="t-blog-details">Add customer</a></li>
+                        <li><a href="{{url('/customer')}}" key="t-blog-details">Customer list</a></li>
+                        <li><a href="{{url('/customer/create')}}" key="t-blog-details">Add customer</a></li>
                         <li><a href="#" key="t-blog-details">Biller List</a></li>
                         <li><a href="#" key="t-blog-details">Add Biller</a></li>
                         <li><a href="#" key="t-blog-details">Supplier list</a></li>
@@ -183,7 +183,7 @@
                         <li><a href="#" key="t-blog-details">Discount</a></li>
                         <li><a href="#" key="t-blog-details">Send Notification</a></li>
                         <li><a href="#" key="t-blog-details">Warehouse</a></li>
-                        <li><a href="#" key="t-blog-details">Customer Group</a></li>
+                        <li><a href="{{url('/customer/group')}}" key="t-blog-details">Customer Group</a></li>
                         <li><a href="#" key="t-blog-details">Brand</a></li>
                         <li><a href="#" key="t-blog-details">Currency</a></li>
                         <li><a href="#" key="t-blog-details">Tax</a></li>
