@@ -2,8 +2,9 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <form method="post" action="{{ route('cg.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('cg.update',$data->cg_slug) }}" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="card">
                 <div class="card-header card_header bg-black">
                     <div class="row">
@@ -46,7 +47,7 @@
                             <div class="form-group {{$errors->has('cg_name') ? ' has-error':''}}">
                                 <label><strong>Name<span class="req_star"> * </span></strong> </label>
                                 <input type="text" class="form-control form_control" id="" name="cg_name"
-                                    value="{{ old('cg_name') }}">
+                                    value="{{ $data->cg_name }}">
 
 
                                 @if ($errors->has('cg_name'))
@@ -57,7 +58,7 @@
                             <div class="form-group">
                                 <label><strong>Remarks</strong> </label>
                                 <textarea type="text" class="form-control form_control" id="" name="cg_remarks"
-                                    value="{{ old('cg_remarks') }}">
+                                    value="{{ $data->cg_remarks }}" rows="">
                                 </textarea>
                             </div>
                         </div>

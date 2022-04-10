@@ -10,7 +10,7 @@
                             </i>All Customer List
                         </div>
                         <div class="col-lg-4 header_btn">
-                            <a class="btn btn-md btn-secondary" href="{{url('/customer/create')}}"><i class=" fas fa-plus "></i> Add Customer</a>
+                            <a class="btn btn-md btn-secondary" href="{{ route('customer.create') }}"><i class=" fas fa-plus "></i> Add Customer</a>
                         </div>
                     </div>
                 </div>

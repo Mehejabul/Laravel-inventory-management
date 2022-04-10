@@ -29,34 +29,40 @@ Route::get('/', function () {
 
 
     //Admin Panel Route start
-Route::get('admin',[AdminController::class, 'index']);
 
-// user Route list
-Route::get('/user',[UserController::class,'index']);
-Route::get('/user/create',[UserController::class,'create']);
-Route::post('/user',[UserController::class,'store']);
-Route::get('/user/show/{slug}',[UserController::class,'show']);
-Route::get('/user/edit/{slug}',[UserController::class,'edit']);
-Route::put('/user/{slug}',[UserController::class,'update']);
-Route::post('/user/softdel',[UserController::class,'softdel']);
-Route::delete('/user/}',[UserController::class,'delete']);
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
+    Route::get('/',[AdminController::class, 'index']);
 
-// CustomerGroup Route list
-Route::get('/customer/group',[CustomerGroupController::class,'index']);
-Route::get('/customer/group/create',[CustomerGroupController::class,'create']);
-Route::post('/customer/group',[CustomerGroupController::class,'store']);
-Route::get('/customer/group/edit/{slug}',[CustomerGroupController::class,'edit']);
-Route::put('/customer/group/{slug}',[CustomerGroupController::class,'update']);
-Route::delete('/customer/group/{slug}',[CustomerGroupController::class,'destroy']);
+    // user Route list
+    Route::get('/users',[UserController::class,'index'])->name('user.index');
+    Route::get('/user/create',[UserController::class,'create'])->name('user.create');
+    Route::post('/user',[UserController::class,'store'])->name('user.store');
+    Route::get('/user/show/{slug}',[UserController::class,'show'])->name('user.show');
+    Route::get('/user/edit/{slug}',[UserController::class,'edit'])->name('user.edit');
+    Route::put('/user{slug}',[UserController::class,'update'])->name('user.update');
+    Route::post('/user/softdel/{slug}',[UserController::class,'softdel'])->name('user.softdel');
+    Route::delete('/user/}',[UserController::class,'destroy'])->name('user.destroy');
 
-//Customer Route list
-Route::get('/customer',[CustomerController::class,'index']);
-Route::get('/customer/create',[CustomerController::class,'create']);
-Route::post('/customer',[CustomerController::class,'store']);
-Route::get('/customer/edit/{slug}',[CustomerController::class,'edit']);
-Route::put('/customer/{slug}',[CustomerController::class,'update']);
-Route::delete('/customer/{slug}',[CustomerController::class,'delete']);
+    // CustomerGroup Route list
+    Route::get('/customer/group',[CustomerGroupController::class,'index'])->name('cg.index');
+    Route::get('/customer/group/create',[CustomerGroupController::class,'create'])->name('cg.create');
+    Route::post('/customer/group',[CustomerGroupController::class,'store'])->name('cg.store');
+    Route::get('/customer/group/edit/{slug}',[CustomerGroupController::class,'edit'])->name('cg.edit');
+    Route::put('/customer/group/{slug}',[CustomerGroupController::class,'update'])->name('cg.update');
+    Route::post('/customer/group/softdel/{slug}',[CustomerGroupController::class,'softdel'])->name('cg.softdel');
+    Route::delete('/customer/group/{slug}',[CustomerGroupController::class,'destroy'])->name('cg.destroy');
+
+    //Customer Route list
+    Route::get('/customer',[CustomerController::class,'index'])->name('customer.index');
+    Route::get('/customer/create',[CustomerController::class,'create'])->name('customer.create');
+    Route::post('/customer',[CustomerController::class,'store'])->name('customer.store');
+    Route::get('/customer/edit/{slug}',[CustomerController::class,'edit'])->name('customer.edit');
+    Route::put('/customer/{slug}',[CustomerController::class,'update'])->name('customer.update');
+    Route::put('/customer/softdel/{slug}',[CustomerController::class,'softdel'])->name('customer.softdel');
+    Route::delete('/customer/{slug}',[CustomerController::class,'delete'])->name('customer.destroy');
+});
+
+
 
 //laravel default auth code
 require __DIR__.'/auth.php';
-
